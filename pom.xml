@@ -6,18 +6,18 @@
     <parent>
         <groupId>de.hs-heilbronn.mi</groupId>
         <artifactId>zlibsvm</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.hs-heilbronn.mi</groupId>
     <artifactId>zlibsvm-toy</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
 
     <properties>
-        <zlibsvm.version>1.1</zlibsvm.version>
-        <commons.io.version>2.4</commons.io.version>
+        <zlibsvm.version>1.2</zlibsvm.version>
+        <commons.io.version>2.6</commons.io.version>
     </properties>
     <dependencies>
         <dependency>
