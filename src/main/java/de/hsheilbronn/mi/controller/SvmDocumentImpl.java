@@ -1,8 +1,9 @@
 package de.hsheilbronn.mi.controller;
 
-import de.hsheilbronn.mi.domain.SvmClassLabel;
-import de.hsheilbronn.mi.domain.SvmDocument;
-import de.hsheilbronn.mi.domain.SvmFeature;
+
+import de.hhn.mi.domain.SvmClassLabel;
+import de.hhn.mi.domain.SvmDocument;
+import de.hhn.mi.domain.SvmFeature;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +12,7 @@ import java.util.List;
 public class SvmDocumentImpl implements SvmDocument {
 
     private final List<SvmFeature> features;
-    private List<SvmClassLabel> classLabels = new ArrayList<>();
+    private final List<SvmClassLabel> classLabels = new ArrayList<>();
 
     public SvmDocumentImpl(List<SvmFeature> features) {
         this.features = features;

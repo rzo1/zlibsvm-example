@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class MainWindow extends JFrame {
     private SvmController svmController;
 
     public MainWindow(SvmController svmController) {
-        this.setTitle("zlibsvm: GMDS Jahrestagung 2017 in Oldenburg");
+        this.setTitle("zlibsvm: example project");
 
         this.setPreferredSize(new Dimension(800, 800));
 
@@ -44,9 +45,7 @@ public class MainWindow extends JFrame {
         this.svmController = svmController;
 
         run.addActionListener(actionEvent -> {
-            if (pointList.isEmpty()) {
-                return;
-            } else {
+            if (!pointList.isEmpty()) {
                 svmController.train(pointList);
 
                 Graphics windowGraphic = getGraphics();
@@ -57,8 +56,8 @@ public class MainWindow extends JFrame {
 
                         byte category = svmController.predict(p);
 
-                        graphicsBuffer.setColor(DEFAULT_COLORS[(int) category]);
-                        windowGraphic.setColor(DEFAULT_COLORS[(int) category]);
+                        graphicsBuffer.setColor(DEFAULT_COLORS[category]);
+                        windowGraphic.setColor(DEFAULT_COLORS[category]);
                         graphicsBuffer.drawLine(x, y, x, y);
                         windowGraphic.drawLine(x, y, x, y);
                     }
@@ -129,7 +128,7 @@ public class MainWindow extends JFrame {
             }
 
             try {
-                FileUtils.write(file, sb.toString());
+                FileUtils.write(file, sb.toString(), StandardCharsets.UTF_8);
             } catch (IOException e) {
                 logger.error(e.getLocalizedMessage(), e);
             }
@@ -144,7 +143,7 @@ public class MainWindow extends JFrame {
             File file = fileChooser.getSelectedFile();
 
             try {
-                List<String> lines = FileUtils.readLines(file);
+                List<String> lines = FileUtils.readLines(file, StandardCharsets.UTF_8);
 
                 clearAll();
 

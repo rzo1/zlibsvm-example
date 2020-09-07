@@ -1,13 +1,13 @@
 package de.hsheilbronn.mi.controller;
 
-import de.hsheilbronn.mi.configuration.KernelType;
-import de.hsheilbronn.mi.configuration.SvmConfigurationImpl;
-import de.hsheilbronn.mi.configuration.SvmType;
-import de.hsheilbronn.mi.domain.*;
-import de.hsheilbronn.mi.process.SvmClassifier;
-import de.hsheilbronn.mi.process.SvmClassifierImpl;
-import de.hsheilbronn.mi.process.SvmTrainer;
-import de.hsheilbronn.mi.process.SvmTrainerImpl;
+import de.hhn.mi.configuration.KernelType;
+import de.hhn.mi.configuration.SvmConfigurationImpl;
+import de.hhn.mi.configuration.SvmType;
+import de.hhn.mi.domain.*;
+import de.hhn.mi.process.SvmClassifier;
+import de.hhn.mi.process.SvmClassifierImpl;
+import de.hhn.mi.process.SvmTrainer;
+import de.hhn.mi.process.SvmTrainerImpl;
 import de.hsheilbronn.mi.ui.Svm2DPoint;
 
 import java.util.ArrayList;
